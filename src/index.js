@@ -14,7 +14,27 @@ export default (editor, opts = {}) => {
 
    loadBlocks(editor, options)
    const modal = editor.Modal
-
+   editor.on('load', () => {
+      editor.setComponents(
+         <div>
+            <h3>Hello World</h3>
+            <ul>
+               <li>
+                  <a href="#">Hello World</a>
+               </li>
+               <li>
+                  <a href="#">Hello World</a>
+               </li>
+               <li>
+                  <a href="#">Hello World</a>
+               </li>
+               <li>
+                  <a href="#">Hello World</a>
+               </li>
+            </ul>
+         </div>
+      )
+   })
    editor.on('block:drag:stop', (cmp, block) => {
       if (!cmp) return
       const appId = block.id
